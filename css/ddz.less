@@ -1,0 +1,490 @@
+@import 'fn.less';
+/*var defined*/
+
+@mainWidth:1010px;
+@mainHeight:600px;
+@swidth:155px;
+@topHeight:350px;
+@botttomHeight:250px;
+@pokerWidth:105px;
+@pokerHeight:145px;
+@spokerWidth:58px;
+@spokerHeight:98px;
+
+
+body{ background:#ccc;font-family: 'Microsoft Yahei','"Microsoft Sans Serif"'}
+.main{
+	width:@mainWidth;
+	height:@mainHeight;
+	position:relative;
+	margin:0px auto;
+	background:url(../img/bg.png) no-repeat center center;
+	.clock{
+		width:32px;
+		height:32px;
+		position: absolute;
+		display: none;
+		background: url(../img/alarm.png) no-repeat center center;
+		p{
+			font-weight: bold;
+			text-align: center;
+			color: #000;
+			padding:9px 0;
+		}
+	}
+	.box-shadow(0 0 20px rgba(0,0,0,.6))
+
+
+}
+/*中间desk部分*/
+.top{
+	width:100%;height:@topHeight;
+	/*嵌套部分开始*/
+	.col-main{
+		float:left;
+	    width:100%;
+	    .wrap{
+			margin:0 @swidth;
+			min-height: 1px;
+		}	
+	}
+	.s-content{width:190px;height:72px;padding: 0 232px;
+		position: relative;
+		.spoker{
+			position: absolute;
+			top:-37px;
+			left:215px;
+			z-index: 97;
+		}
+		.spoker:nth-child(1){left:230px;z-index: 98;}
+		.spoker:nth-child(2){left:245px;z-index: 99;}
+		.s-store{
+			height:68px;width:87px;
+			position: absolute;top:4px;left:330px;
+			background: url(../img/button.png) no-repeat -200px -122px;
+		}
+		.money{
+			background: url(../img/button.png) no-repeat -185px -65px;
+			width:16px;height:25px;
+			position: absolute;left:58px;top:11px;
+		}
+		.money.num2{background-position: -202px -65px}
+		.money.num3{background-position: -218px -65px}
+		.multiple{
+			background: url(../img/button.png) no-repeat -185px -65px;
+			width:16px;height:25px;
+			position: absolute;left:58px;top:33px;
+		}
+		.multiple.num2{background-position: -202px -65px}
+		.multiple.num3{background-position: -218px -65px}
+	}
+	.staus{
+		background: url(../img/top.png) no-repeat 0 0;
+		width:654px;
+		height:127px;
+		position: absolute;
+		left:50%;
+		margin-left: -327px;
+		top:0;
+	}
+	.left,.right,.wrap{
+		height:@topHeight;
+	}
+	.col-left,.col-right{
+		position:relative;
+		float: left;
+	}
+	.col-left{
+		width:@swidth;
+		margin-left:-100%;
+	}
+	.col-right{
+		width:@swidth;
+		margin-left:-@swidth;
+	}
+	.clock{
+		bottom:-70px;
+		left:60px;
+	}
+	.lr-content{margin-top:108px;position: relative;height:80px;width: 100%;
+		.poker{
+
+			position: absolute;
+			top:0;
+			.scale(.65);
+		}
+	}
+	/*我的poker*/
+	.me-poker{
+		height:160px;
+		position: relative;
+		.scale(.8);
+		> *{position: absolute;}
+	}
+
+	/**左手边poker*/
+	.left-poker{
+		position: absolute;
+		left:0;
+		width:340px;
+	}
+	/*右手边poker*/
+	.right-poker{
+		position: absolute;
+		right: 0;
+		width:340px;
+
+	}
+}
+
+
+.bottom{
+	height:@botttomHeight;
+	width:100%;
+	position: absolute;
+	bottom:0;
+	.mytips{
+		text-align: center;
+		font-size: 18px;
+		font-weight: bold;
+		color: #F60;
+		visibility:hidden;
+	}
+	.b-top{	
+		height:50px;padding: 0 200px;
+		> .button{
+			margin-right:72px;
+			float: left;
+		}
+		> .button:last-child{
+			margin: 0;
+		}
+	}
+
+	.b-bottom{height:170px;float: left;}
+	.me{width:155px;height:155px;float:left;}
+	.pokers{
+		float:right;width:850px;height:170px;
+		position: relative;
+		> .poker{
+			position: absolute;
+			left:auto;
+			bottom: 0;
+			z-index: 100;
+		}
+		
+	}
+	.clock{
+		left:60px;
+		top:-50px;
+	}
+}
+
+.user{
+	width:115px;
+	height:115px;
+	padding:0 20px 20px;
+	position: relative;
+	p.name{
+		color:#FFF;
+		overflow: hidden;
+		width:115px;
+		font-size: 16px;
+		font-weight: bold;
+		text-align: center;
+	}
+	.img{
+		width:115px;
+		height:115px;
+		background: url(../img/portrait.png) no-repeat -8px -2px;
+		text-align: center;
+		position: relative;
+		.female,.male,.dizhu{
+			background: url(../img/portrait.png) no-repeat 0 0;
+			width:87px;
+			height:87px;
+			position: absolute;
+			top:9px;
+			left:13px;
+		}
+		.female{
+			background-position: -305px 0;
+		}
+		.dizhu{
+			background-position: -216px 0;
+		}
+		.male{
+			background-position: -126px 0;
+		}
+		
+	}
+	
+	.pokerNum > *{
+		background: url(../img/number.png) no-repeat 0 0;
+		height:22px;
+		float:left;
+
+		display: inline-block;
+	}
+	.pokerNum{
+		margin:5px 40px;
+
+		.goldNum0{width:19px;background-position: 0 0;}
+		.goldNum1{width:13px;background-position: -19px 0;}
+		.goldNum2{width:15px;background-position: -32px 0;}
+		.goldNum3{width:15px;background-position: -47px 0}
+		.goldNum4{width:15px;background-position: -62px 0}
+		.goldNum5{width:15px;background-position: -77px 0}
+		.goldNum6{width:16px;background-position: -92px 0}
+		.goldNum7{width:16px;background-position: -108px 0}
+		.goldNum8{width:15px;background-position: -124px 0}
+		.goldNum9{width:16px;background-position: -139px 0}
+
+		.whiteNum0{height:20px;width:13px;background-position: -5px -25px;}
+		.widthNum1{height:20px;width:11px;background-position: -18px -25px;}
+		.widthNum2{height:20px;width:11px;background-position: -29px -25px;}
+		.widthNum3{height:20px;width:11px;background-position: -40px -25px;}
+		.widthNum4{height:20px;width:12px;background-position: -53px -25px;}
+		.widthNum5{height:20px;width:11px;background-position: -64px -25px;}
+		.widthNum6{height:20px;width:12px;background-position: -76px -25px;}
+		.widthNum7{height:20px;width:12px;background-position: -88px -25px;}
+		.widthNum8{height:20px;width:12px;background-position: -100px -25px;}
+		.widthNum9{height:20px;width:12px;background-position: -112px -25px;}
+	}
+
+}
+.user.hightlight{
+	background: url(../img/portrait.png) no-repeat -2px -120px;
+}
+/**大牌**/
+.poker{
+	width:@pokerWidth;
+	height:@pokerHeight;
+	position: relative;
+	background: url(../img/poker.png) no-repeat -156px -12px;
+
+	.p-content{padding:8px;}
+
+	/*花色*/
+	p.huase::after{
+		content: ' ';
+		position: absolute;
+		right:10px;
+		bottom:38px;
+	  	.rotate(-180deg);
+	}
+	.meihua p.huase,.meihua p.huase::after{width:20px; height:24px;background: url(../img/poker.png) no-repeat -270px -179px;}
+	.fangkuai p.huase,.fangkuai p.huase::after{width:20px; height:24px;background: url(../img/poker.png) no-repeat -247px -179px;}
+	.hongtao p.huase,.hongtao p.huase::after{width:20px; height:24px;background: url(../img/poker.png) no-repeat -294px -179px;}
+	.heitao p.huase,.heitao p.huase::after{width:20px; height:24px;background: url(../img/poker.png) no-repeat -318px -179px;}
+
+	.poker17 p.huase,.poker16 p.huase{display:none;}
+	/*牌面*/
+	
+	p.paimian::after{
+		content: ' ';
+		position: absolute;
+		right:10px;
+		bottom:16px;
+	  	.rotate(-180deg);
+	}
+	/*黑色*/
+	.poker3 p.paimian,.poker3 p.paimian::after{width:14px;height:21px;background: url(../img/poker.png) no-repeat -195px -465px;}
+	.poker4 p.paimian,.poker4 p.paimian::after{width:14px;height:21px;background: url(../img/poker.png) no-repeat -178px -465px;}
+	.poker5 p.paimian,.poker5 p.paimian::after{width:14px;height:21px;background: url(../img/poker.png) no-repeat -162px -465px;}
+	.poker6 p.paimian,.poker6 p.paimian::after{width:14px;height:21px;background: url(../img/poker.png) no-repeat -146px -465px;}
+	.poker7 p.paimian,.poker7 p.paimian::after{width:14px;height:21px;background: url(../img/poker.png) no-repeat -228px -465px;}
+	.poker8 p.paimian,.poker8 p.paimian::after{width:14px;height:21px;background: url(../img/poker.png) no-repeat -211px -465px;}
+	.poker9 p.paimian,.poker9 p.paimian::after{width:14px;height:21px;background: url(../img/poker.png) no-repeat -129px -465px;}
+	.poker10 p.paimian,.poker10 p.paimian::after{width:21px;height:21px;background: url(../img/poker.png) no-repeat -106px -465px;}
+	.poker11 p.paimian,.poker11 p.paimian::after{width:14px;height:21px;background: url(../img/poker.png) no-repeat -89px -465px;}
+	.poker12 p.paimian,.poker12 p.paimian::after{width:18px;height:21px;background: url(../img/poker.png) no-repeat -67px -465px;}
+	.poker13 p.paimian,.poker13 p.paimian::after{width:17px;height:21px;background: url(../img/poker.png) no-repeat -49px -465px;}
+	.poker14 p.paimian,.poker14 p.paimian::after{width:17px;height:21px;background: url(../img/poker.png) no-repeat -29px -465px;}
+	.poker15 p.paimian,.poker15 p.paimian::after{width:14px;height:21px;background: url(../img/poker.png) no-repeat -12px -465px;}
+
+	.poker18 p.paimian,.poker16 p.paimian::after{width:15px;height:100px;background: url(../img/poker.png) no-repeat -288px -73px;}
+	.poker19 p.paimian,.poker17 p.paimian::after{width:15px;height:100px;background: url(../img/poker.png) no-repeat -270px -73px;}
+
+	/*红色*/
+	.hongtao.poker3 p.paimian, .hongtao.poker3 p.paimian::after, .fangkuai.poker3 p.paimian,.fangkuai.poker3 p.paimian::after{background-position: -195px -490px;}
+	.hongtao.poker4 p.paimian, .hongtao.poker4 p.paimian::after, .fangkuai.poker4 p.paimian,.fangkuai.poker4 p.paimian::after{background-position: -178px -490px;}
+	.hongtao.poker5 p.paimian, .hongtao.poker5 p.paimian::after, .fangkuai.poker5 p.paimian,.fangkuai.poker5 p.paimian::after{background-position: -162px -490px;}
+	.hongtao.poker6 p.paimian, .hongtao.poker6 p.paimian::after, .fangkuai.poker6 p.paimian,.fangkuai.poker6 p.paimian::after{background-position: -146px -490px;}
+	.hongtao.poker7 p.paimian, .hongtao.poker7 p.paimian::after, .fangkuai.poker7 p.paimian,.fangkuai.poker7 p.paimian::after{background-position: -228px -490px;}
+	.hongtao.poker8 p.paimian, .hongtao.poker8 p.paimian::after, .fangkuai.poker8 p.paimian,.fangkuai.poker8 p.paimian::after{background-position: -211px -490px;}
+	.hongtao.poker9 p.paimian, .hongtao.poker9 p.paimian::after, .fangkuai.poker9 p.paimian,.fangkuai.poker9 p.paimian::after{background-position: -129px -490px;}
+	.hongtao.poker10 p.paimian,.hongtao.poker10 p.paimian::after,.fangkuai.poker10 p.paimian,.fangkuai.poker10 p.paimian::after{background-position: -106px -490px;}
+	.hongtao.poker11 p.paimian,.hongtao.poker11 p.paimian::after,.fangkuai.poker11 p.paimian,.fangkuai.poker11 p.paimian::after{background-position: -89px -490px;}
+	.hongtao.poker12 p.paimian,.hongtao.poker12 p.paimian::after,.fangkuai.poker12 p.paimian,.fangkuai.poker12 p.paimian::after{background-position: -67px -490px;}
+	.hongtao.poker13 p.paimian,.hongtao.poker13 p.paimian::after,.fangkuai.poker13 p.paimian,.fangkuai.poker13 p.paimian::after{background-position: -49px -490px;}
+	.hongtao.poker14 p.paimian,.hongtao.poker14 p.paimian::after,.fangkuai.poker14 p.paimian,.fangkuai.poker14 p.paimian::after{background-position: -29px -490px;}
+	.hongtao.poker15 p.paimian,.hongtao.poker15 p.paimian::after,.fangkuai.poker15 p.paimian,.fangkuai.poker15 p.paimian::after{background-position: -12px -490px;}
+
+}
+/*大牌反面*/
+.cover{
+	width:@pokerWidth;
+	height:@pokerHeight;
+	background: url(../img/poker.png) no-repeat -22px -10px;
+}
+/**小牌**/
+.spoker.poker{
+	
+	.scale(.45);
+}
+
+/*气泡类*/
+.bubble{
+	border:0 none;
+	background: url(../img/button.png) no-repeat -472px -250px;
+	width:50px;
+	height:26px;
+	padding:24.5px 25px;
+
+	.text{width:50px;height:26px;border:0 none;background: url(../img/button.png) no-repeat 0 0;}
+	/*不出*/
+	.pass{background-position: -244px -5px;}
+	/*不叫*/
+	.gamble0{background-position: -121px -5px;
+		span{display:none;}
+	}
+	/*1分*/
+	.gamble1{
+		background: none;
+		span{display:inline-block;background: url(../img/button.png) no-repeat -211px -92px;}
+		span:first-child{width:16px;height:25px;background-position: -185px -65px;}
+		span:last-child{width:28px;height:28px;}
+	}
+	/*2分*/
+	.gamble2{
+		background: none;
+		span{display:inline-block;background: url(../img/button.png) no-repeat -211px -92px;}
+		span:first-child{width:16px;height:25px;background-position: -202px -65px;}
+		span:last-child{width:28px;height:28px;}
+	}
+	/*3分*/
+	.gamble3{
+		background: none;
+		span{display:inline-block;background: url(../img/button.png) no-repeat -211px -92px;}
+		span:first-child{width:16px;height:25px;background-position: -219px -65px;}
+		span:last-child{width:28px;height:28px;}
+	}
+}
+.right-poker .bubble{background-position: -472px -331px}
+.button{
+	border:0 none;
+	width:50px;
+	height:26px;
+	padding:13px 23px;
+	cursor: pointer;
+	background: url(../img/button.png) no-repeat -15px -78px;
+
+	.text{width:50px;height:28px;border:0 none;background: url(../img/button.png) no-repeat 0 0;}
+	.text > span{display:none;}
+	/*不出*/
+	.pass{background-position: -244px -5px;}
+	/*开始*/
+	.start{background-position: -185px -36px;}
+	/*出牌*/
+	.play{background-position: -245px -96px;}
+	/*不叫*/
+	.gamble0{background-position: -185px -5px;}
+
+	/*重选*/
+	.reselect{background-position: -244px -36px;}
+	/*提示*/
+	.tips{background-position: -244px -64px;}
+
+	/*1分*/
+	.gamble1{
+		margin-left:5px;
+		background: none;
+		span{display:inline-block;background: url(../img/button.png) no-repeat -211px -94px;}
+		span:first-child{width:16px;height:25px;background-position: -185px -67px;}
+		span:last-child{width:28px;height:28px;}
+	}
+	/*2分*/
+	.gamble2{
+		margin-left:5px;
+		background: none;
+		span{display:inline-block;background: url(../img/button.png) no-repeat -211px -94px;}
+		span:first-child{width:16px;height:25px;background-position: -202px -67px;}
+		span:last-child{width:28px;height:28px;}
+	}
+	/*3分*/
+	.gamble3{
+		margin-left:5px;
+		background: none;
+		span{display:inline-block;background: url(../img/button.png) no-repeat -211px -94px;}
+		span:first-child{width:16px;height:25px;background-position: -219px -67px;}
+		span:last-child{width:28px;height:28px;}
+	}
+}
+/*鼠标滑过按钮样式*/
+.button:hover{
+	/*不出*/
+	.pass{background-position: -141px -179px;}
+	/*开始*/
+	.start{background-position: -122px -36px;}
+	/*出牌*/
+	.play{background-position: -125px -96px;}
+	/*不叫*/
+	.gamble0{background-position: -122px -5px;}
+
+	/*重选*/
+	.reselect{background-position: -141px -152px;}
+	/*提示*/
+	.tips{background-position: -141px -124px;}
+
+
+	/*1分*/
+	.gamble1{
+		span:last-child{background-position: -184px -95px;}
+		span:first-child{background-position: -125px -67px;}
+	}
+	/*2分*/
+	.gamble2{
+		span:last-child{background-position: -183px -95px;}
+		span:first-child{background-position: -141px -67px;}
+	}
+	/*3分*/
+	.gamble3{
+		span:last-child{background-position: -184px -95px;}
+		span:first-child{background-position: -158px -67px;}
+	}
+}
+
+.button.green{background-position: -15px -4px}
+.button.disabled{background-position: -15px -238px;
+	/*不出*/
+	.pass{background-position: -422px -3px;}
+	/*开始*/
+	.start{background-position: -122px -36px;}
+	/*出牌*/
+	.play{background-position: -481px -32px;}
+	/*不叫*/
+	.gamble0{background-position: -122px -5px;}
+
+	/*重选*/
+	.reselect{background-position: -422px -32px;}
+	/*提示*/
+	.tips{background-position: -479px -3px;}
+
+
+	/*1分*/
+	.gamble1{
+		span:last-child{background-position: -184px -95px;}
+		span:first-child{background-position: -125px -67px;}
+	}
+	/*2分*/
+	.gamble2{
+		span:last-child{background-position: -183px -95px;}
+		span:first-child{background-position: -141px -67px;}
+	}
+	/*3分*/
+	.gamble3{
+		span:last-child{background-position: -184px -95px;}
+		span:first-child{background-position: -158px -67px;}
+	}
+}
